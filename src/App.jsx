@@ -13,23 +13,23 @@ export default function NodyxLanding() {
     { icon: <Server className="w-6 h-6" />, title: "Cloud o VPS", desc: "Despliegue en Cloud o servidor propio optimizado según lo que requiera tu negocio" },
   ];
 
-  const plans = [
+  const servicePillars = [
     {
-      name: "Starter",
-      price: "$700.000 COP / mes",
+      title: "Automatización Inteligente",
+      icon: <PlugZap className="w-6 h-6" />,
       bullets: [
-        "Flujos automatizados con herramientas de calidad según tus necesidades",
-        "Integraciones entre sistemas y plataformas dependiendo tu industria",
-        "Bots y notificaciones en WhatsApp y Email para mejorar la comunicación",
+        "Flujos automatizados para tareas repetitivas adecuadas a tus necesidades",
+        "Integraciones entre sistemas y plataformas utilizadas en tu negocio",
+        "Bots y notificaciones en WhatsApp y Email acomodados a tus procesos",
       ],
     },
     {
       title: "Desarrollo de Software a Medida",
       icon: <Settings2 className="w-6 h-6" />,
       bullets: [
-        "Sistemas de agendamiento y turnos",
-        "Aplicaciones internas y paneles de control",
-        "Gestión de inventario y pedidos",
+        "Sistemas de agendamiento y turnos personalizados",
+        "Aplicaciones internas y paneles de control adaptados a tu flujo de trabajo",
+        "Gestión de inventario y pedidos integrada con tus canales de venta",
       ],
     },
     {
@@ -192,9 +192,9 @@ export default function NodyxLanding() {
 
 
           <nav className="hidden md:flex items-center gap-6 text-sm text-neutral-300">
-            <a href="#servicios" className="hover:text-white">Servicios</a>
+            <a href="#servicios" className="hover:text-white">¿Que hacemos?</a>
             <a href="#proceso" className="hover:text-white">Proceso</a>
-            <a href="#precios" className="hover:text-white">Precios</a>
+            <a href="#productos" className="hover:text-white">Soluciones</a>
             <a href="#casos" className="hover:text-white">Casos</a>
             <a href="#contacto" className="hover:text-white">Contacto</a>
           </nav>
@@ -264,51 +264,19 @@ export default function NodyxLanding() {
 </section>
 
 
-      {/* SERVICIOS */}
-      <section id="servicios" className="max-w-6xl mx-auto px-4 py-16">
-        <h2 className="text-2xl md:text-4xl font-black">Servicios</h2>
-        <p className="mt-2 text-neutral-300">Automatizaciones llave en mano con metodología y documentación completa.</p>
+      <section id="servicios" className="max-w-7xl mx-auto px-4 py-16">
+        <h2 className="text-2xl md:text-4xl font-black">Qué hacemos</h2>
+        <p className="mt-2 text-neutral-300">Combinamos automatización, desarrollo y web para digitalizar tu negocio.</p>
         <div className="mt-8 grid md:grid-cols-3 gap-6">
-          {[
-            {title:"Integraciones & APIs",desc:"Sincroniza e‑commerce, CRM, ERPs y mensajería.",icon:<MessagesSquare className='w-6 h-6'/>},
-            {title:"Bots & Notificaciones",desc:"WhatsApp, email, monitoreos y alertas en tiempo real.",icon:<Zap className='w-6 h-6'/>},
-            {title:"Reportes & Data",desc:"ETL, hojas de cálculo, dashboards y backups automáticos.",icon:<LineChart className='w-6 h-6'/>}
-          ].map((s,i)=> (
+          {servicePillars.map((s, i) => (
             <div key={i} className="rounded-2xl border border-white/10 p-6 bg-white/5">
-              <div className="w-10 h-10 rounded-xl bg-white/10 grid place-items-center mb-3">{s.icon}</div>
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500/20 to-fuchsia-500/20 border border-indigo-500/30 grid place-items-center mb-3">{s.icon}</div>
               <h3 className="font-semibold">{s.title}</h3>
-              <p className="text-sm text-neutral-300 mt-1">{s.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* PROCESO */}
-      <section id="proceso" className="max-w-6xl mx-auto px-4 py-16">
-        <h2 className="text-2xl md:text-4xl font-black">Nuestro proceso</h2>
-        <div className="mt-8 grid md:grid-cols-4 gap-6">
-          {steps.map((s,i)=> (
-            <div key={i} className="rounded-2xl border border-white/10 p-6 bg-white/5">
-              <div className="text-sm text-neutral-400">{s.step}</div>
-              <h3 className="font-semibold mt-1">{s.title}</h3>
-              <p className="text-sm text-neutral-300 mt-1">{s.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* PRECIOS */}
-      <section id="precios" className="max-w-6xl mx-auto px-4 py-16">
-        <h2 className="text-2xl md:text-4xl font-black">Planes</h2>
-        <p className="mt-2 text-neutral-300">También hacemos proyectos a medida y cobramos solo por valor entregado.</p>
-        <div className="mt-8 grid md:grid-cols-3 gap-6">
-          {plans.map((p,i)=> (
-            <div key={i} className={`rounded-2xl border p-6 bg-white/5 ${p.highlight? 'border-fuchsia-400/40' : 'border-white/10'}`}>
-              <h3 className="font-semibold text-lg">{p.name}</h3>
-              <div className="text-3xl font-black mt-2">{p.price}</div>
-              <ul className="mt-4 space-y-2 text-sm text-neutral-300">
-                {p.bullets.map((b,bi)=> (
-                  <li key={bi} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 mt-0.5"/> {b}</li>
+              <ul className="mt-3 space-y-2 text-sm text-neutral-300">
+                {s.bullets.map((b, bi) => (
+                  <li key={bi} className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 mt-0.5" /> {b}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -316,11 +284,10 @@ export default function NodyxLanding() {
         </div>
       </section>
 
-
-      {/* Por qué elegirnos - Versión para empresa nueva */}
+      {/* Por qué elegirnos*/}
       <section className="max-w-7xl mx-auto px-4 py-16">
         <h2 className="text-2xl md:text-4xl font-black">Por qué elegirnos</h2>
-        <p className="mt-2 text-neutral-300">Las ventajas de trabajar con una empresa nueva y comprometida.</p>
+        <p className="mt-2 text-neutral-300">Las ventajas de trabajar con Nodyx una empresa comprometida contigo.</p>
         <div className="mt-8 grid md:grid-cols-4 gap-6">
           {whyChooseUs.map((item, i) => (
             <div key={i} className="rounded-2xl border border-white/10 p-6 bg-white/5 text-center">
@@ -331,7 +298,6 @@ export default function NodyxLanding() {
           ))}
         </div>
       </section>
-
 
       <section id="proceso" className="max-w-7xl mx-auto px-4 py-16">
         <h2 className="text-2xl md:text-4xl font-black">Nuestro proceso</h2>
@@ -353,7 +319,6 @@ export default function NodyxLanding() {
           ))}
         </div>
       </section>
-
 
       <section id="productos" className="max-w-7xl mx-auto px-4 py-16">
         <h2 className="text-2xl md:text-4xl font-black">Soluciones listas para implementar</h2>
@@ -448,48 +413,17 @@ export default function NodyxLanding() {
                 <Clock className="w-5 h-5 text-blue-400" />
                 <span className="text-sm">Respuesta en menos de 24 horas</span>
               </div>
-            </div>
-
-
-            <div className="flex flex-col sm:flex-row gap-3 mt-6">
+            </div>              
+           <div className="flex flex-col sm:flex-row gap-3 mt-6">
               <a href="https://wa.me/+573125241782" target="_blank" rel="noopener noreferrer" className="flex-1 inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3 bg-green-500 text-neutral-900 hover:bg-green-400 transition font-semibold">
                 <MessageCircle className="w-5 h-5" /> WhatsApp directo
               </a>
             </div>
             </div>
-          
-        </div>
-      </section>
-
-      {/* CASOS */}
-      <section id="casos" className="max-w-6xl mx-auto px-4 py-16">
-        <h2 className="text-2xl md:text-4xl font-black">Casos destacados</h2>
-        <div className="mt-8 grid md:grid-cols-3 gap-6">
-          {[1,2,3].map(i=> (
-            <div key={i} className="rounded-2xl border border-white/10 p-6 bg-white/5">
-              <div className="text-xs text-neutral-400">Caso #{i}</div>
-              <h3 className="font-semibold mt-1">E‑commerce → Facturación + WhatsApp</h3>
-              <p className="text-sm text-neutral-300 mt-1">Automatizamos pedidos y confirmaciones reduciendo tiempos en 70%.</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CONTACTO */}
-      <section id="contacto" className="max-w-6xl mx-auto px-4 py-16">
-        <div className="rounded-3xl border border-white/10 p-8 bg-white/5 grid md:grid-cols-2 gap-8">
-          <div>
-            <h2 className="text-2xl md:text-4xl font-black">Hablemos 🚀</h2>
-            <p className="mt-2 text-neutral-300">Cuéntanos tu proceso y te enviamos una demo + estimación de ROI.</p>
-            <ul className="mt-6 space-y-2 text-neutral-300 text-sm">
-              <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4"/> Respuesta en 24h</li>
-              <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4"/> NDA a solicitud</li>
-              <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4"/> Precios claros y sin sorpresas</li>
-            </ul>
-          </div>
           <ContactForm/>
         </div>
       </section>
+
 
       {/* FOOTER */}
       <footer className="border-t border-white/10">
