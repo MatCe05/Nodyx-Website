@@ -1,36 +1,36 @@
 import { useState } from "react";
 import { CheckCircle, ArrowRight, Zap, Workflow, Shield, Server, MessageCircle, Settings2, Globe, PlugZap, ShoppingCart, Database, Bot, CalendarCheck, Users, Lightbulb, Code, TestTube, Rocket, Headphones, Star, Award, Clock, DollarSign, Play, Heart, Target } from "lucide-react";
-
+import ContactForm from "../components/Email.jsx";
 
 export default function NodyxLanding() {
   const [email, setEmail] = useState("");
 
 
   const features = [
-    { icon: <Workflow className="w-6 h-6" />, title: "Automatizaciones n8n", desc: "Conecta apps, APIs y bases de datos en flujos inteligentes." },
+
+    { icon: <Workflow className="w-6 h-6" />, title: "Automatizaciones", desc: "Conecta apps, información y mucho más en flujos inteligentes." },
     { icon: <Zap className="w-6 h-6" />, title: "Ahorro de tiempo", desc: "Reduce tareas repetitivas hasta 80% y disminuye errores." },
     { icon: <Shield className="w-6 h-6" />, title: "Calidad y transparencia", desc: "Entregables claros y comunicación constante." },
-    { icon: <Server className="w-6 h-6" />, title: "Cloud o VPS", desc: "Despliegue en n8n Cloud o servidor propio optimizado." },
+    { icon: <Server className="w-6 h-6" />, title: "Cloud o VPS", desc: "Despliegue en Cloud o servidor propio optimizado según lo que requiera tu negocio" },
   ];
-
 
   const servicePillars = [
     {
       title: "Automatización Inteligente",
       icon: <PlugZap className="w-6 h-6" />,
       bullets: [
-        "Flujos automatizados con n8n",
-        "Integraciones entre sistemas y plataformas",
-        "Bots y notificaciones en WhatsApp y Email",
+        "Flujos automatizados para tareas repetitivas adecuadas a tus necesidades",
+        "Integraciones entre sistemas y plataformas utilizadas en tu negocio",
+        "Bots y notificaciones en WhatsApp y Email acomodados a tus procesos",
       ],
     },
     {
       title: "Desarrollo de Software a Medida",
       icon: <Settings2 className="w-6 h-6" />,
       bullets: [
-        "Sistemas de agendamiento y turnos",
-        "Aplicaciones internas y paneles de control",
-        "Gestión de inventario y pedidos",
+        "Sistemas de agendamiento y turnos personalizados",
+        "Aplicaciones internas y paneles de control adaptados a tu flujo de trabajo",
+        "Gestión de inventario y pedidos integrada con tus canales de venta",
       ],
     },
     {
@@ -93,13 +93,13 @@ export default function NodyxLanding() {
     },
     {
       icon: <ShoppingCart className="w-6 h-6" />,
-      title: "Shop Sync",
+      title: "Shop-Sync",
       desc: "Conecta tu tienda con facturación, inventario y notificaciones al cliente.",
     },
     {
       icon: <Database className="w-6 h-6" />,
       title: "DataFlow",
-      desc: "ETL liviano: unifica datos, limpia y genera reportes o dashboards.",
+      desc: "Unificación de tus datos, limpiandolos y generando los reportes o dashboards según tu necesidad.",
     },
     {
       icon: <Bot className="w-6 h-6" />,
@@ -113,12 +113,12 @@ export default function NodyxLanding() {
     {
       icon: <Heart className="w-6 h-6" />,
       title: "Enfoque personal",
-      desc: "Como empresa nueva, cada proyecto recibe atención directa del fundador y máximo cuidado en los detalles."
+      desc: "Cada proyecto recibe atención directa de los profesionales y un máximo cuidado en los detalles."
     },
     {
       icon: <DollarSign className="w-6 h-6" />,
       title: "Precios competitivos",
-      desc: "Al estar empezando, ofrecemos tarifas más accesibles sin comprometer la calidad del servicio."
+      desc: "Ofrecemos tarifas más accesibles sin comprometer la calidad del servicio."
     },
     {
       icon: <Target className="w-6 h-6" />,
@@ -128,38 +128,52 @@ export default function NodyxLanding() {
     {
       icon: <Clock className="w-6 h-6" />,
       title: "Disponibilidad total",
-      desc: "Al tener pocos clientes, podemos dedicar más tiempo y estar disponibles cuando nos necesites."
+      desc: "Nos gusta dedicar el tiempo necesario a cada uno de nuestros clientes y estar disponibles cuando nos necesites."
     }
   ];
 
 
   const successCases = [
     {
-      industry: "Retail Local",
-      title: "Panadería automatiza pedidos por WhatsApp",
-      description: "Una panadería familiar que recibía 50+ pedidos diarios por WhatsApp. Creamos un bot que toma pedidos, calcula totales y confirma disponibilidad automáticamente.",
+      industry: "Facturación Eléctronica",
+      title: "Agencia contable automatiza reportes de pagos",
+      description: "Una firma contable que perdía horas registrando manualmente ventas y compras ahora cuenta con un flujo automatizado que integra su software contable y registra las facturas de forma segura y precisa.",
       results: [
-        { metric: "Tiempo de respuesta", improvement: "-80%" },
-        { metric: "Errores en pedidos", improvement: "-90%" }
-      ]
+        { metric: "Tiempo de proceso", improvement: "-80%" },
+        { metric: "Errores en registros", improvement: "-90%" }
+      ],
+      EngagementMessage: "¡Dejaron de perder medio día semanal solo en conciliaciones!."
     },
     {
       industry: "Servicios",
-      title: "Consultorio médico optimiza citas",
-      description: "Clínica pequeña que gestionaba citas por llamadas perdía muchas por no contestar. Implementamos sistema con recordatorios automáticos y reagendamiento.",
+      title: "Empresa mejora su atención al cliente con automatización",
+      description: "Un negocio que recibía solicitudes por WhatsApp, correo y formularios sin responder a tiempo perdió clientes por falta de seguimiento. Se implementó un sistema centralizado de gestión de solicitudes que clasifica, asigna y notifica automáticamente al responsable.",
       results: [
-        { metric: "Citas perdidas", improvement: "-65%" },
-        { metric: "Tiempo administrativo", improvement: "-50%" }
-      ]
+        { metric: "Satisfacción cliente", improvement: "+70%" },
+        { metric: "Tiempo de soporte", improvement: "-50%" }
+      ],
+      EngagementMessage: "Cada solicitud tiene responsable, prioridad y seguimiento automático."
+
     },
     {
-      industry: "E-commerce",
-      title: "Tienda online conecta todo su flujo",
-      description: "Tienda que vendía por Instagram y gestionaba todo manualmente. Conectamos ventas → inventario → facturación → envío en un solo flujo.",
+      industry: "Comercio electrónico",
+      title: "Tienda online conecta ventas, inventario y facturación",
+      description: "Una tienda que operaba manualmente desde Instagram y WhatsApp integró todos sus sistemas en un solo flujo automatizado: ventas, inventario, facturación y envío sincronizados.",
       results: [
-        { metric: "Tiempo de proceso", improvement: "-75%" },
-        { metric: "Satisfacción cliente", improvement: "+40%" }
-      ]
+        { metric: "Tiempo de proceso", improvement: "-60%" },
+        { metric: "Satisfacción cliente", improvement: "+35%" }
+      ],
+      EngagementMessage: "Menos tareas repetitivas, más tiempo para vender."
+    },
+    {
+      industry: "Gestión de datos",
+      title: "Negocio unifica y organiza su información en un solo panel",
+      description: "Una empresa con datos dispersos (facturación, clientes, métricas) logró centralizar toda la información mediante una automatización ETL que consolida fuentes (archivos, bases de datos, CRM) en dashboards con indicadores clave.",
+      results: [
+        { metric: "Tiempo administrativo", improvement: "-50%" },
+        { metric: "Mejora en toma de decisiones", improvement: "+30%" }
+      ],
+      EngagementMessage: "Toda la información clave en un solo lugar y actualizada automáticamente."
     }
   ];
 
@@ -167,14 +181,16 @@ export default function NodyxLanding() {
   return (
     <div className="min-h-screen w-full bg-neutral-950 text-neutral-100">
       <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/50 border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-          
+          <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+               <a href="#Home" className="flex items-center"><img src="/Logo_LandingPage.png" alt="Nodyx logo" className="h-10 w-auto object-contain"/></a>
+
+
           <nav className="hidden md:flex items-center gap-6 text-sm text-neutral-300">
-            <a href="#servicios" className="hover:text-white transition-colors">Qué hacemos</a>
-            <a href="#proceso" className="hover:text-white transition-colors">Proceso</a>
-            <a href="#productos" className="hover:text-white transition-colors">Soluciones</a>
-            <a href="#casos" className="hover:text-white transition-colors">Casos</a>
-            <a href="#contacto" className="hover:text-white transition-colors">Contacto</a>
+            <a href="#servicios" className="hover:text-white">¿Que hacemos?</a>
+            <a href="#proceso" className="hover:text-white">Proceso</a>
+            <a href="#productos" className="hover:text-white">Soluciones</a>
+            <a href="#casos" className="hover:text-white">Casos</a>
+            <a href="#contacto" className="hover:text-white">Contacto</a>
           </nav>
           
           <a href="https://wa.me/+573125241782" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-2xl px-4 py-2 bg-green-500 text-neutral-900 hover:bg-green-400 transition text-sm font-medium">
@@ -184,43 +200,63 @@ export default function NodyxLanding() {
       </header>
 
 
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-fuchsia-600/20 via-indigo-600/10 to-transparent" />
-        <div className="max-w-7xl mx-auto px-4 py-20 md:py-28 grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-4xl md:text-6xl font-black leading-tight">
-              Soluciones digitales que <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-fuchsia-400">automatizan tu negocio</span>
-            </h1>
-            <p className="mt-5 text-neutral-300 text-lg">
-              En <strong>Nodyx</strong> desarrollamos automatizaciones, software y páginas web para hacer que tu negocio funcione de forma más eficiente y moderna.
-            </p>
-            
-            {/* CTAs principales */}
-            <div className="flex flex-wrap gap-4 mt-8">
-              <a href="#contacto" className="inline-flex items-center gap-2 rounded-2xl px-6 py-3 bg-fuchsia-500 text-white hover:bg-fuchsia-400 transition font-semibold">
-                Agenda consulta gratuita <ArrowRight className="w-5 h-5" />
-              </a>
-              <a href="#casos" className="inline-flex items-center gap-2 rounded-2xl px-6 py-3 border border-white/20 hover:bg-white/5 transition font-medium">
-                <Play className="w-5 h-5" /> Ver casos de éxito
-              </a>
-            </div>
-          </div>
-          <div className="relative">
-            <div className="absolute -inset-1 bg-gradient-to-tr from-indigo-500 to-fuchsia-500 blur-2xl opacity-20 rounded-3xl" />
-            <div className="relative rounded-3xl border border-white/10 p-6 md:p-8 bg-white/5">
-              <div className="grid grid-cols-2 gap-4">
-                {features.map((f, i) => (
-                  <div key={i} className="rounded-2xl border border-white/10 p-4 bg-white/5">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500/20 to-fuchsia-500/20 border border-indigo-500/30 grid place-items-center mb-3">{f.icon}</div>
-                    <h3 className="font-semibold">{f.title}</h3>
-                    <p className="text-sm text-neutral-300 mt-1">{f.desc}</p>
-                  </div>
-                ))}
+
+<section id="Home" className="relative max-w-7xl mx-auto px-4 py-16 scroll-smooth">
+  <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-fuchsia-600/20 via-indigo-600/10 to-transparent" />
+
+  <div className="py-20 md:py-28 grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <h1 className="text-4xl md:text-6xl font-black leading-tight">
+        Soluciones digitales que{" "}
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-fuchsia-400">
+          automatizan tu negocio
+        </span>
+      </h1>
+
+      <p className="mt-5 text-neutral-300 text-lg">
+        En <strong>Nodyx</strong> desarrollamos automatizaciones, software y
+        páginas web para hacer que tu negocio funcione de forma más eficiente y moderna.
+      </p>
+
+      <div className="flex flex-wrap gap-4 mt-8">
+        <a
+          href="#contacto"
+          className="inline-flex items-center gap-2 rounded-2xl px-6 py-3 bg-fuchsia-500 text-white hover:bg-fuchsia-400 transition font-semibold"
+        >
+          Agenda consulta gratuita
+          <ArrowRight className="w-5 h-5" />
+        </a>
+
+        <a
+          href="#casos"
+          className="inline-flex items-center gap-2 rounded-2xl px-6 py-3 border border-white/20 hover:bg-white/5 transition font-medium"
+        >
+          <Play className="w-5 h-5" /> Ver casos de éxito
+        </a>
+      </div>
+    </div>
+
+    <div className="relative">
+      <div className="absolute -inset-1 bg-gradient-to-tr from-indigo-500 to-fuchsia-500 blur-2xl opacity-20 rounded-3xl" />
+      <div className="relative rounded-3xl border border-white/10 p-6 md:p-8 bg-white/5">
+        <div className="grid grid-cols-2 gap-4">
+          {features.map((f, i) => (
+            <div
+              key={i}
+              className="rounded-2xl border border-white/10 p-4 bg-white/5"
+            >
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500/20 to-fuchsia-500/20 border border-indigo-500/30 grid place-items-center mb-3">
+                {f.icon}
               </div>
+              <h3 className="font-semibold">{f.title}</h3>
+              <p className="text-sm text-neutral-300 mt-1">{f.desc}</p>
             </div>
-          </div>
+          ))}
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
 
       <section id="servicios" className="max-w-7xl mx-auto px-4 py-16">
@@ -243,11 +279,10 @@ export default function NodyxLanding() {
         </div>
       </section>
 
-
-      {/* Por qué elegirnos - Versión para empresa nueva */}
+      {/* Por qué elegirnos*/}
       <section className="max-w-7xl mx-auto px-4 py-16">
         <h2 className="text-2xl md:text-4xl font-black">Por qué elegirnos</h2>
-        <p className="mt-2 text-neutral-300">Las ventajas de trabajar con una empresa nueva y comprometida.</p>
+        <p className="mt-2 text-neutral-300">Las ventajas de trabajar con Nodyx, una empresa comprometida contigo.</p>
         <div className="mt-8 grid md:grid-cols-4 gap-6">
           {whyChooseUs.map((item, i) => (
             <div key={i} className="rounded-2xl border border-white/10 p-6 bg-white/5 text-center">
@@ -258,7 +293,6 @@ export default function NodyxLanding() {
           ))}
         </div>
       </section>
-
 
       <section id="proceso" className="max-w-7xl mx-auto px-4 py-16">
         <h2 className="text-2xl md:text-4xl font-black">Nuestro proceso</h2>
@@ -280,7 +314,6 @@ export default function NodyxLanding() {
           ))}
         </div>
       </section>
-
 
       <section id="productos" className="max-w-7xl mx-auto px-4 py-16">
         <h2 className="text-2xl md:text-4xl font-black">Soluciones listas para implementar</h2>
@@ -315,6 +348,7 @@ export default function NodyxLanding() {
                     <span className="text-green-400 font-semibold">{result.improvement}</span>
                   </div>
                 ))}
+                <span className="text-purple-200 font-semibold">{caso.EngagementMessage}</span>
               </div>
             </div>
           ))}
@@ -363,7 +397,7 @@ export default function NodyxLanding() {
         <div className="rounded-3xl border border-white/10 p-8 bg-white/5 grid md:grid-cols-2 gap-8">
           <div>
             <h2 className="text-2xl md:text-4xl font-black">¡Hablemos de tu proyecto! 🚀</h2>
-            <p className="mt-2 text-neutral-300">Como empresa nueva, cada cliente es importante. Te doy atención personalizada y respuesta rápida.</p>
+            <p className="mt-2 text-neutral-300">Cada cliente es importante. Te doy atención personalizada y respuesta rápida.</p>
             
             <div className="mt-6 space-y-3">
               <div className="flex items-center gap-3 p-3 rounded-lg bg-green-500/10 border border-green-500/20">
@@ -374,41 +408,19 @@ export default function NodyxLanding() {
                 <Clock className="w-5 h-5 text-blue-400" />
                 <span className="text-sm">Respuesta en menos de 24 horas</span>
               </div>
-            </div>
-
-
-            <div className="flex flex-col sm:flex-row gap-3 mt-6">
+            </div>              
+           <div className="flex flex-col sm:flex-row gap-3 mt-6">
               <a href="https://wa.me/+573125241782" target="_blank" rel="noopener noreferrer" className="flex-1 inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3 bg-green-500 text-neutral-900 hover:bg-green-400 transition font-semibold">
                 <MessageCircle className="w-5 h-5" /> WhatsApp directo
               </a>
             </div>
-          </div>
-          <form onSubmit={(e) => { e.preventDefault(); alert(`Gracias, te contacto en menos de 24 horas a ${email}`); }} className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium mb-2">Nombre completo</label>
-              <input className="w-full rounded-xl bg-neutral-900 border border-white/10 px-4 py-3 outline-none focus:border-fuchsia-400 transition" placeholder="Tu nombre" required />
             </div>
-            <div>
-              <label className="block text-sm font-medium mb-2">Email</label>
-              <input className="w-full rounded-xl bg-neutral-900 border border-white/10 px-4 py-3 outline-none focus:border-fuchsia-400 transition" placeholder="tu@email.com" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-            </div>
-            <div>
-              <label className="block text-sm font-medium mb-2">Empresa/Proyecto</label>
-              <input className="w-full rounded-xl bg-neutral-900 border border-white/10 px-4 py-3 outline-none focus:border-fuchsia-400 transition" placeholder="Nombre de tu empresa" required />
-            </div>
-            <div>
-              <label className="block text-sm font-medium mb-2">¿Qué quieres automatizar?</label>
-              <textarea className="w-full rounded-xl bg-neutral-900 border border-white/10 px-4 py-3 outline-none focus:border-fuchsia-400 min-h-[120px] transition" placeholder="Describe los procesos que te quitan tiempo o te dan dolores de cabeza..." required />
-            </div>
-            <button className="w-full rounded-2xl px-5 py-3 bg-indigo-500 hover:bg-indigo-400 transition font-semibold inline-flex items-center justify-center gap-2" type="submit">
-              Enviar mensaje <ArrowRight className="w-5 h-5" />
-            </button>
-            <p className="text-xs text-neutral-400 text-center">Te contacto en máximo 24 horas con una propuesta inicial</p>
-          </form>
+          <ContactForm/>
         </div>
       </section>
 
 
+      {/* FOOTER */}
       <footer className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 py-10 text-sm text-neutral-400 flex flex-col md:flex-row items-center justify-between gap-4">
           <div>© {new Date().getFullYear()} Nodyx. Automatización para pequeñas empresas.</div>
@@ -417,7 +429,7 @@ export default function NodyxLanding() {
             <a href="#proceso" className="hover:text-white">Proceso</a>
             <a href="#productos" className="hover:text-white">Soluciones</a>
             <a href="#casos" className="hover:text-white">Casos</a>
-            <a href="https://wa.me/+573125241782" target="_blank" rel="noopener noreferrer" className="hover:text-white">WhatsApp</a>
+            <a href="https://wa.me/+57" target="_blank" rel="noopener noreferrer" className="hover:text-white">WhatsApp</a>
           </div>
         </div>
       </footer>
