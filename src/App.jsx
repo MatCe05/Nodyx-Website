@@ -5,6 +5,7 @@ import ContactForm from "../components/Email.jsx";
 export default function NodyxLanding() {
   const [email, setEmail] = useState("");
 
+
   const features = [
 
     { icon: <Workflow className="w-6 h-6" />, title: "Automatizaciones", desc: "Conecta apps, información y mucho más en flujos inteligentes." },
@@ -176,16 +177,9 @@ export default function NodyxLanding() {
     }
   ];
 
-  const steps = [
-    { step: "01", title: "Descubrimiento", desc: "Brief, mapa de procesos y KPIs (ahorro, tiempo, errores)." },
-    { step: "02", title: "Dimensionamiento", desc: "Factibilidad técnica, costos Cloud vs VPS, estimación/ROI." },
-    { step: "03", title: "Diseño & Build", desc: "PDD • SDD • TDD, desarrollo en n8n con buenas prácticas." },
-    { step: "04", title: "Pruebas & Go-Live", desc: "Test plan, QA con datos reales, manuales y capacitación." },
-  ];
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-100">
-      {/* NAV */}
+    <div className="min-h-screen w-full bg-neutral-950 text-neutral-100">
       <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/50 border-b border-white/10">
           <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
                <a href="#Home" className="flex items-center"><img src="/Logo_LandingPage.png" alt="Nodyx logo" className="h-10 w-auto object-contain"/></a>
@@ -198,8 +192,9 @@ export default function NodyxLanding() {
             <a href="#casos" className="hover:text-white">Casos</a>
             <a href="#contacto" className="hover:text-white">Contacto</a>
           </nav>
-          <a href="#contacto" className="inline-flex items-center gap-2 rounded-2xl px-4 py-2 bg-white text-neutral-900 hover:opacity-90 transition text-sm font-medium">
-            Empezar <ArrowRight className="w-4 h-4" />
+          
+          <a href="https://wa.me/+573125241782" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-2xl px-4 py-2 bg-green-500 text-neutral-900 hover:bg-green-400 transition text-sm font-medium">
+            WhatsApp <MessageCircle className="w-4 h-4" />
           </a>
         </div>
       </header>
@@ -287,7 +282,7 @@ export default function NodyxLanding() {
       {/* Por qué elegirnos*/}
       <section className="max-w-7xl mx-auto px-4 py-16">
         <h2 className="text-2xl md:text-4xl font-black">Por qué elegirnos</h2>
-        <p className="mt-2 text-neutral-300">Las ventajas de trabajar con Nodyx una empresa comprometida contigo.</p>
+        <p className="mt-2 text-neutral-300">Las ventajas de trabajar con Nodyx, una empresa comprometida contigo.</p>
         <div className="mt-8 grid md:grid-cols-4 gap-6">
           {whyChooseUs.map((item, i) => (
             <div key={i} className="rounded-2xl border border-white/10 p-6 bg-white/5 text-center">
@@ -427,12 +422,14 @@ export default function NodyxLanding() {
 
       {/* FOOTER */}
       <footer className="border-t border-white/10">
-        <div className="max-w-6xl mx-auto px-4 py-10 text-sm text-neutral-400 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div>© {new Date().getFullYear()} Nodyx. Automatización inteligente.</div>
+        <div className="max-w-7xl mx-auto px-4 py-10 text-sm text-neutral-400 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div>© {new Date().getFullYear()} Nodyx. Automatización para pequeñas empresas.</div>
           <div className="flex items-center gap-4">
-            <a href="#" className="hover:text-white">Términos</a>
-            <a href="#" className="hover:text-white">Privacidad</a>
-            <a href="#" className="hover:text-white">Contacto</a>
+            <a href="#servicios" className="hover:text-white">Qué hacemos</a>
+            <a href="#proceso" className="hover:text-white">Proceso</a>
+            <a href="#productos" className="hover:text-white">Soluciones</a>
+            <a href="#casos" className="hover:text-white">Casos</a>
+            <a href="https://wa.me/+57" target="_blank" rel="noopener noreferrer" className="hover:text-white">WhatsApp</a>
           </div>
         </div>
       </footer>
